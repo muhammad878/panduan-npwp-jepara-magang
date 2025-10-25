@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media print {
+  @page {
+    margin: 1.5cm;
+    size: A4;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+    background: white;
+  }
+
+  .print\:hidden {
+    display: none !important;
+  }
+
+  .print\:pt-0 {
+    padding-top: 0 !important;
+  }
+
+  .print\:py-4 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  h1 {
+    font-size: 20pt;
+    margin-bottom: 12pt;
+    page-break-after: avoid;
+  }
+
+  h2 {
+    font-size: 16pt;
+    margin-top: 12pt;
+    margin-bottom: 8pt;
+    page-break-after: avoid;
+  }
+
+  h3 {
+    font-size: 14pt;
+    margin-top: 10pt;
+    margin-bottom: 6pt;
+    page-break-after: avoid;
+  }
+
+  p, li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  ul, ol {
+    page-break-inside: avoid;
+  }
+
+  .card, .alert, .accordion {
+    page-break-inside: avoid;
+    border: 1px solid #ddd;
+    padding: 8pt;
+    margin-bottom: 8pt;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #666;
+  }
+
+  button, input[type="checkbox"] {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  input[type="checkbox"]:checked {
+    background-color: #0066CC;
+    border-color: #0066CC;
+  }
+
+  .bg-blue-50,
+  .bg-emerald-50,
+  .bg-amber-50,
+  .bg-red-50 {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
